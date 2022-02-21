@@ -30,7 +30,6 @@ export const Header = ({ category, setCategory, word, setWord }) => {
           <ThemeProvider theme={darkTheme}>
             <TextField
               id="standard-basic"
-              label="Standard"
               variant="standard"
               className="search"
               label="Search a word"
