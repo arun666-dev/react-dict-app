@@ -11,19 +11,20 @@ function App() {
   const [word, setWord] = useState("");
   const [category, setCategory] = useState("en");
 
-  const dictApi = async () => {
-    try {
-      const response = await axios.get(
-        `https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`
-      );
-      // console.log(data);
-      setMeanings(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
   console.log(meanings);
+
   useEffect(() => {
+    const dictApi = async () => {
+      try {
+        const response = await axios.get(
+          `https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`
+        );
+        // console.log(data);
+        setMeanings(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     // call dictApi func.
     dictApi();
   }, [word, category]);
